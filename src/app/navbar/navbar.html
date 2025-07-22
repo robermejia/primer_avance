@@ -25,6 +25,8 @@
             <app-students-table *ngIf="students.length > 0" [students]="students"></app-students-table>
         </main>
 
+        <app-add-form (studentAdded)="addStudent($event)"></app-add-form>
+
     </div>
 </div>
 
