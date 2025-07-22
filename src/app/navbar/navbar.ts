@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { StudentsTable } from "../students-table/students-table";
 import { Student } from '../../shared/entities';
 import { HttpClient } from '@angular/common/http';
@@ -12,6 +12,8 @@ import { AddForm } from '../add-form/add-form';
   styleUrl: './navbar.css'
 })
 export class Navbar {
+  @Output() sectionChanged = new EventEmitter<string>();
+
   students: Student[] = [];
   activeSection = "students";
 
@@ -20,17 +22,17 @@ export class Navbar {
   ngOnInit(): void {
     this.http.get<Student[]>('mocks/students.json').subscribe(data => {
       this.students = data;
-
-      // 👇 Forzamos a Angular a detectar cambios
       this.cdr.detectChanges();
     });
   }
 
+  navigate(section: string) {
+    this.activeSection = section;
+    this.sectionChanged.emit(section); // útil si otro componente necesita saber el cambio
+  }
+
   addStudent(student: Student) {
     console.log('Adding student:', student);
-    // Emit the new student to the students array
-    /*  this.students.push(student); */
-    //perder referencia
     this.students = [...this.students, student];
   }
 }
