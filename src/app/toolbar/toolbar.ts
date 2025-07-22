@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Bigtitle } from '../../shared/directives/bigtitle.spec';
 
 @Component({
   selector: 'app-toolbar',
-  imports: [],
+  imports: [Bigtitle],
   templateUrl: './toolbar.html',
   styleUrl: './toolbar.css'
 })
