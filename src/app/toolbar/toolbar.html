@@ -1,22 +1,33 @@
-  <div class="container py-2 bg-light border-bottom">
-    <div class="d-flex flex-wrap align-items-center justify-content-between">
-
-      <!-- Logo o Título -->
-      <a href="#" class="text-dark fs-4 fw-bold text-decoration-none">MiApp</a>
-
-      <!-- Buscador -->
-      <form class="d-flex my-2 my-lg-0" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar">
-        <button class="btn btn-outline-primary" type="submit">Buscar</button>
-      </form>
-
-      <!-- Botones de acción -->
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">Nuevo</button>
-        <button type="button" class="btn btn-outline-secondary">Guardar</button>
-        <button type="button" class="btn btn-outline-danger">Salir</button>
+<div class="container">
+  <!-- Toolbar superior -->
+  <nav class="toolbar navbar navbar-expand-lg shadow-sm px-3 py-2">
+    <div class="container-fluid">
+      
+      <!-- Logo / Marca -->
+      <a class="navbar-brand fw-bold" href="#">AppCoderHouse</a>
+  
+      <!-- Acciones de la toolbar -->
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar acciones">
+        <div class="btn-group me-2" role="group">
+          <button type="button" class="btn btn-light">Nuevo</button>
+          <button type="button" class="btn btn-light">Editar</button>
+          <button type="button" class="btn btn-light">Eliminar</button>
+        </div>
+  
+        <!-- Usuario -->
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            Usuario
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Perfil</a></li>
+            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+          </ul>
+        </div>
       </div>
+  
     </div>
-  </div>
+  </nav>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
