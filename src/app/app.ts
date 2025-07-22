@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Toolbar } from './toolbar/toolbar';
 import { Navbar } from './navbar/navbar';
-import { Student } from '../shared/entities';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 

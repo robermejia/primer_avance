@@ -32,10 +32,13 @@ export class EditForm implements OnInit {
   }
 
   onEdit() {
-    if (this.studentForm.valid) {
-      const { dni, ...updatedStudent } = this.studentForm.value;
-      this.studentEdited.emit({ dni, updatedStudent });
-      this._snackBar.open('Estudiante editado con éxito', 'Cerrar', { duration: 3000 });
-    }
+  if (this.studentForm.valid) {
+    const { dni, ...updatedStudent } = this.studentForm.value;
+    this.studentEdited.emit({ dni, updatedStudent });
+
+    // ❌ Elimina esta línea
+    // this._snackBar.open('Estudiante editado con éxito', 'Cerrar', { duration: 3000 });
   }
+}
+
 }

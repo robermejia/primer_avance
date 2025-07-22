@@ -1,0 +1,7 @@
+
+.snackbar-success {
+    background-color: #28a745;
+    /* verde éxito */
+    color: white;
+    font-weight: bold;
+}
