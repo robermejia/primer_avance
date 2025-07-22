@@ -1,4 +1,9 @@
 # PrimerAvance
+<p align="center"> 
+    <img src="https://jobs.coderhouse.com/assets/logos_coderhouse.png" alt="CoderHouse"  height="100"/>
+</p>
+
+# Listado de Clases - Comisión 73985 (Angular)
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
 
