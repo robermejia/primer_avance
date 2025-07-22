@@ -11,11 +11,11 @@
                 <li (click)="navigate('add')">
                     <a class="nav-link" href="#">Agregar</a>
                 </li>
-                <li (click)="navigate('delete')">
-                    <a class="nav-link" href="#">Eliminar</a>
-                </li>
                 <li (click)="navigate('edit')">
                     <a class="nav-link" href="#">Modificar</a>
+                </li>
+                <li (click)="navigate('delete')">
+                    <a class="nav-link" href="#">Eliminar</a>
                 </li>
             </ul>
         </nav>
@@ -36,6 +36,11 @@
                 <app-delete-form (studentDeleted)="deleteStudent($event)"></app-delete-form>
 
             </ng-container>
+
+            <ng-container *ngIf="activeSection === 'edit'">
+                <app-edit-form (studentEdited)="editStudent($event)"></app-edit-form>
+            </ng-container>
+
 
         </main>
 

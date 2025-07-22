@@ -6,10 +6,11 @@ import { CommonModule } from '@angular/common';
 import { AddForm } from '../add-form/add-form';
 import { DeleteForm } from '../delete-form/delete-form';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditForm } from '../edit-form/edit-form';
 
 @Component({
   selector: 'app-navbar',
-  imports: [StudentsTable, CommonModule, AddForm, DeleteForm, MatSnackBarModule],
+  imports: [StudentsTable, CommonModule, AddForm, DeleteForm, MatSnackBarModule, EditForm],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
@@ -50,6 +51,14 @@ export class Navbar {
       this._snackBar.open('No se encontró el estudiante a eliminar', 'Cerrar', {
         duration: 3000
       });
+    }
+  }
+
+  editStudent(data: { dni: string; updatedStudent: any }) {
+    const index = this.students.findIndex(s => s.dni.toString() === data.dni);
+    if (index !== -1) {
+      this.students[index] = { ...this.students[index], ...data.updatedStudent };
+      this.students = [...this.students]; // Trigger change detection
     }
   }
 }
